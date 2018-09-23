@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+	<head>
+	
+		<title>WebChat Interface 1</title>
+		<meta charset="utf-8" >
+		<link rel="stylesheet" href="style1.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		
+	
+	</head>
+	
+	
+	<body>
+	<header>
+	
+		<H1 id="title"> WebChat Interface Test</H1>
+	
+	</header>
+		<div id="interbox">
+			<div id="messages">
+				<ul id="messageBox">
+				
+				</ul>
+			</div>
+			
+			<div id="senderDiv">
+			
+				<form id="senderForm" action="#">
+				
+				
+					<input type="text" id="sender" placeholder="Type Message Here">
+						
+					<button>Send</button>
+				
+				</form>
+	
+			</div>
+	
+		<script>
+		$(function () {
+			var socket = io();
+			$('form').submit(function() {
+				socket.emit('chat message', $('#sender').val();
+				$('#sender').val('');
+				return false;
+			});
+			socket.on('chat message', function(msg) {
+				$('#messageBox').append($('<li>').text(msg));
+			});
+		});
+	
+		
+		</div>
+	</body>
+	
+</html>
