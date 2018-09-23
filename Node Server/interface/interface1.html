@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+	<head>
+	
+		<title>WebChat Interface 1</title>
+		<meta charset="utf-8" >
+		<!-- <link rel="stylesheet" href=".\style1.css"> -->
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		
+		<style>
+		div#interbox {
+	
+	width: 400px;
+	height: 250px;
+	border: solid black 1px;
+	overflow: auto;
+	margin-left:auto;
+	margin-right: auto;
+	
+}
+
+div#messages {
+	
+	height: 80%;
+	overflow:auto;
+	border:solid black 1px;
+	padding:2px;
+	
+}
+
+div#senderDiv {
+	
+	float:left;
+	margin-top:10px;
+	margin-bottom: 10px;
+	margin-left: auto;
+	
+}
+
+form#senderForm{
+	
+	padding-left:10px;
+	
+	
+}
+
+input#sender{
+	
+		width: 300px;
+		
+	
+}
+
+header{
+	
+	width:100%;
+	text-align:center;
+	
+}
+
+h1#title {
+	
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+		</style>
+	
+	</head>
+	
+	
+	<body>
+	<header>
+	
+		<H1 id="title"> WebChat Interface Test</H1>
+	
+	</header>
+		<div id="interbox">
+			<div id="messages">
+				<ul id="messageBox">
+				
+				</ul>
+			</div>
+			
+			<div id="senderDiv">
+			
+				<form id="senderForm" action="#">
+				
+				
+					<input type="text" id="sender" placeholder="Type Message Here">
+						
+					<button>Send</button>
+				
+				</form>
+	
+			</div>
+	
+		<script>
+		<script>
+		$(function () {
+			var socket = io();
+			$('senderForm').submit(function() {
+				socket.emit('chat message', $('#sender').val();
+				$('#sender').val('');
+				return false;
+			});
+			socket.on('chat message', function(msg) {
+				$('#messageBox').append($('<li>').text(msg));
+			});
+		});
+	
+		
+		</div>
+	</body>
+	
+</html>

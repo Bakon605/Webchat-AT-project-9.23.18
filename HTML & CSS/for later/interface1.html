@@ -40,9 +40,10 @@
 			</div>
 	
 		<script>
+		<script>
 		$(function () {
 			var socket = io();
-			$('form').submit(function() {
+			$('senderForm').submit(function() {
 				socket.emit('chat message', $('#sender').val();
 				$('#sender').val('');
 				return false;
