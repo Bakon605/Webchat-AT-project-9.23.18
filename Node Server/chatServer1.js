@@ -4,7 +4,12 @@ var io = require('socket.io')(http);
 
 exp.get('/', function(req, res) {
 
+
+	
 	res.sendFile(__dirname + '/interface/interface1.html');
+	
+	
+
 	
 });
 
