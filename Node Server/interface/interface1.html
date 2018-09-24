@@ -21,14 +21,16 @@
 		<H1 id="title"> WebChat Interface Test</H1>
 	
 	</header>
+<!-- containing grid layout -->	
 	<div class="gridLayout">
 		<div id="interbox">
+<!-- div containing the messages -->		
 			<div id="messages">
 				<ul id="messageBox">
 				
 				</ul>
 			</div>
-			
+<!-- div containing the sender elements -->			
 			<div id="senderDiv">
 				
 				<input type="text" id="handle" placeholder="Username">
@@ -45,11 +47,11 @@
 				<br>
 	
 			</div>
-	
+	<!-- This is the socket connection script to talk to the chat server -->
 		<script>
 		
 		
-		
+		//connects client to server
 		$(function () {
 			var socket = io();
 			$('#sendForm').submit(function() {
@@ -74,7 +76,7 @@
 		</script>
 		
 		</div>
-						
+ <!-- Online Users List -->						
 		<div id="onlineUsers">
 			<h2>Users Online</h2>
 			<ul id="Users">
