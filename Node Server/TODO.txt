@@ -26,3 +26,7 @@ TODO/FIXES
 	9a. move emoticons on resize
 
 10. adjust layout for mobile viewing
+
+11. Hosting?
+	11A. openode may be a good option
+	11b. surge.sh
