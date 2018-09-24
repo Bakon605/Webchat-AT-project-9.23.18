@@ -24,3 +24,5 @@ TODO/FIXES
 
 9. ADD EMOTICONS ON RIGHT HAND SIDE FOR SELECTION
 	9a. move emoticons on resize
+
+10. adjust layout for mobile viewing
