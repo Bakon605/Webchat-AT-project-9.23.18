@@ -17,6 +17,11 @@ background-color:rgb(242, 242, 242);
 
 }
 
+.gridLayout {
+
+	display: grid;
+	grid-template-columns: 30% 40% 30%;
+}
 		
 div#interbox {
 	
@@ -29,6 +34,7 @@ div#interbox {
 	margin-left:auto;
 	margin-right: auto;
 	
+	grid-column:2;
 }
 
 div#messages {
@@ -87,12 +93,28 @@ h1#title {
 
 }
 
-li{
+li#messageLi{
 	
 	list-style:none;
 
 
 }
+
+div#onlineUsers{
+
+grid-column: 1;
+grid-row:1;
+
+}
+
+ul#Users{
+
+
+
+
+}
+
+
 
 		</style>
 
@@ -106,6 +128,7 @@ li{
 		<H1 id="title"> WebChat Interface Test</H1>
 	
 	</header>
+	<div class="gridLayout">
 		<div id="interbox">
 			<div id="messages">
 				<ul id="messageBox">
@@ -140,16 +163,35 @@ li{
 				socket.emit('chat message', ($('#handle').val() + 
 					": " + $('#sender').val()));
 				$('#sender').val('');
+				
+				socket.emit('user', $('#handle').val());
+				
 				return false;
 			});
+			//adds user to the list of online users
+			socket.on('user', function(username){
+				$('#Users').append($('<li id="userOn">').text(username));
+			});
+			//adds message to the message box
 			socket.on('chat message', function(msg) {
-				$('#messageBox').append($('<li>').text(msg));
+				$('#messageBox').append($('<li id="messageLi">').text(msg));
 			});
 		});
 		
 		</script>
 		
 		</div>
+						
+		<div id="onlineUsers">
+			<h2>Users Online</h2>
+			<ul id="Users">
+				<li id="userOn">Test User</li>
+			</ul>
+		
+		
+		
+		</div>
+	</div>
 	</body>
 	
 </html>
