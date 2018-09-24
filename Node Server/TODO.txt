@@ -1,0 +1,23 @@
+TODO/FIXES
+
+1.FIX PACKAGE.JSON FILE
+
+2. UPDATE ONLINE USERS LIST
+	- added temporary fix using JQuery that reads existing users and 
+		removes duplicate names
+
+3. ADD NICKNAMES TO SOCKET CONNECTIONS
+
+4. EXTRA STYLING ON USERS OWN MESSAGES
+
+5. STYLING ON INCOMING MESSAGES
+	- css styling added that will alternate messages' background color 
+		between gray and white
+
+6. CSS SEND WITH HTML
+	- added the calling for the css file in the node server
+
+7. LAYOUT
+	- implemented css grid layout
+	
+8. CLEAN UP CSS FILE
