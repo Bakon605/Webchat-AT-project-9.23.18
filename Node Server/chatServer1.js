@@ -14,6 +14,13 @@ exp.get('/', function(req, res) {
 				res.sendFile(__dirname + '/interface/style1.css');
 	
 		});
+		
+		exp.get('/quickfix.js', function(req, res){
+			
+		
+			res.sendFile(__dirname + '/interface/quickfix.js');
+		
+		});
 	
 
 	
