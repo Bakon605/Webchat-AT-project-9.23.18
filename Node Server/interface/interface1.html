@@ -86,7 +86,7 @@ h1#title {
 			
 			<div id="senderDiv">
 			
-				<form id="senderForm" action="#">
+				<form action="">
 				
 				
 					<input type="text" id="sender" placeholder="Type Message Here">
@@ -98,11 +98,10 @@ h1#title {
 			</div>
 	
 		<script>
-		<script>
 		$(function () {
 			var socket = io();
-			$('senderForm').submit(function() {
-				socket.emit('chat message', $('#sender').val();
+			$('form').submit(function() {
+				socket.emit('chat message', $('#sender').val());
 				$('#sender').val('');
 				return false;
 			});
@@ -110,7 +109,8 @@ h1#title {
 				$('#messageBox').append($('<li>').text(msg));
 			});
 		});
-	
+		
+		</script>
 		
 		</div>
 	</body>
