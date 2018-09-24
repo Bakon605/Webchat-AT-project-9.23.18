@@ -1,17 +1,27 @@
 var exp = require('express')();
+var fs = require('fs');
 var http = require('http').Server(exp);
 var io = require('socket.io')(http);
 
 exp.get('/', function(req, res) {
 
 
-	
 	res.sendFile(__dirname + '/interface/interface1.html');
+		
+		exp.get('/style1.css', function(req, res){
 	
+				
+				res.sendFile(__dirname + '/interface/style1.css');
+	
+		});
 	
 
 	
 });
+
+
+
+
 
 io.on('connection', function(socket){
 	

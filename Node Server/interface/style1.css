@@ -1,12 +1,29 @@
+
+
+body {
+
+background-color:rgb(242, 242, 242);
+
+}
+
+.gridLayout {
+
+	display: grid;
+	grid-template-columns: 30% 40% 30%;
+}
+		
 div#interbox {
 	
+	background-color: white;
+	
 	width: 400px;
-	height: 250px;
+	height: 400px;
 	border: solid black 1px;
-	overflow: auto;
+	overflow: visible;
 	margin-left:auto;
 	margin-right: auto;
 	
+	grid-column:2;
 }
 
 div#messages {
@@ -20,17 +37,20 @@ div#messages {
 
 div#senderDiv {
 	
+	height:100px;
 	float:left;
 	margin-top:10px;
 	margin-bottom: 10px;
 	margin-left: auto;
+	padding-left:10px;
 	
 }
 
 form#senderForm{
 	
 	padding-left:10px;
-	
+	margin-bottom:10px;
+	padding-bottom:10px;
 	
 }
 
@@ -54,3 +74,41 @@ h1#title {
 	margin-right:auto;
 	
 }
+
+#handle {
+	
+	margin-bottom:10px;
+
+
+}
+
+li#messageLi{
+	
+	list-style:none;
+	width:80%;
+
+
+}
+
+div#onlineUsers{
+
+grid-column: 1;
+grid-row:1;
+
+}
+
+ul#Users{
+
+
+
+
+}
+
+#messageLi:nth-child(odd){
+
+background-color:rgb(217, 217, 217);
+
+}
+
+
+
