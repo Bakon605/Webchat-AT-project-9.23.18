@@ -10,12 +10,12 @@
 		<script src="/socket.io/socket.io.js"></script>
 		
 		<style>
-		div#interbox {
+div#interbox {
 	
 	width: 400px;
-	height: 250px;
+	height: 350px;
 	border: solid black 1px;
-	overflow: auto;
+	overflow: visible;
 	margin-left:auto;
 	margin-right: auto;
 	
@@ -32,6 +32,7 @@ div#messages {
 
 div#senderDiv {
 	
+	height:100px;
 	float:left;
 	margin-top:10px;
 	margin-bottom: 10px;
@@ -66,6 +67,21 @@ h1#title {
 	margin-right:auto;
 	
 }
+
+#handle {
+	
+	margin-bottom:10px;
+
+
+}
+
+li{
+	
+	list-style:none;
+
+
+}
+
 		</style>
 	
 	</head>
@@ -85,8 +101,11 @@ h1#title {
 			</div>
 			
 			<div id="senderDiv">
+				
+				<input type="text" id="handle" placeholder="Username">
+				<br>
 			
-				<form action="">
+				<form id="sendForm" action="">
 				
 				
 					<input type="text" id="sender" placeholder="Type Message Here">
@@ -94,14 +113,19 @@ h1#title {
 					<button>Send</button>
 				
 				</form>
+				<br>
 	
 			</div>
 	
 		<script>
+		
+		
+		
 		$(function () {
 			var socket = io();
-			$('form').submit(function() {
-				socket.emit('chat message', $('#sender').val());
+			$('#sendForm').submit(function() {
+				socket.emit('chat message', ($('#handle').val() + 
+					": " + $('#sender').val()));
 				$('#sender').val('');
 				return false;
 			});
