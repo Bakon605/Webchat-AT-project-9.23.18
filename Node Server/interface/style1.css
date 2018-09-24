@@ -97,6 +97,11 @@ grid-row:1;
 
 }
 
+#onlineUsers h2{
+	margin-top:0px;
+	padding-top:0px;
+}
+
 ul#Users{
 
 
@@ -110,5 +115,24 @@ background-color:rgb(217, 217, 217);
 
 }
 
+#emoteSelectionDiv{
+	grid-column:3;
+	grid-row:1;
+	
+}
+
+#emoteSelectionDiv h3 {
+	
+	margin-top: 0px;
+	padding-top:0px;
+	
+	
+}
+
+#emoteSelectionDiv table tr td{
+	
+	border: solid black 1px;
+	
+}
 
 
